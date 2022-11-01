@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            Debug.Log("Player crossed the Finish Line!");
+            SceneManager.LoadScene(0);
         }
     }
 }
