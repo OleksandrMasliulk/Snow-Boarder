@@ -1235,6 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad03e0fe2bab03e439503dd0cbbaa357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reloadDelay: 1
 --- !u!61 &1163219360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1459,6 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9526d353748a90146b49f0e1b6e992c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reloadDelay: 0.5
 --- !u!1 &2069513419
 GameObject:
   m_ObjectHideFlags: 3
