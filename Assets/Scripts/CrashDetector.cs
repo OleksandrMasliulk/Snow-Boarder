@@ -13,6 +13,8 @@ public class CrashDetector : MonoBehaviour
 
     private PlayerController _playerController;
 
+    private bool _isAlive = false;
+
     private void Awake() 
     {
         _audioSource = GetComponent<AudioSource>();
@@ -21,12 +23,14 @@ public class CrashDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.CompareTag("Ground"))
+        if (other.CompareTag("Ground") && _isAlive)
         {
             _playerController.DisableControls();
             _crashVFX.Play();
             _audioSource.PlayOneShot(_crashSFX);
             Invoke("ReloadLevel", _reloadDelay);
+
+            _isAlive = false;
         }
     }
 
