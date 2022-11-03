@@ -7300,7 +7300,7 @@ SurfaceEffector2D:
     m_Bits: 4294967295
   m_Speed: 20
   m_SpeedVariation: 0
-  m_ForceScale: 0
+  m_ForceScale: 0.001
   m_UseContactForce: 0
   m_UseFriction: 0
   m_UseBounce: 0
@@ -10562,8 +10562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2496ed02fbdfbc4fa103a95a9c68455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _torqueAmount: 60
   _maxVelocity: 60
+  _normalSpeed: 30
+  _boostSpeed: 60
+  _torqueAmount: 60
 --- !u!114 &2035588140
 MonoBehaviour:
   m_ObjectHideFlags: 0
