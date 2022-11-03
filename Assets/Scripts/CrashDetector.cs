@@ -11,15 +11,19 @@ public class CrashDetector : MonoBehaviour
     private AudioSource _audioSource;
     [SerializeField] private AudioClip _crashSFX;
 
+    private PlayerController _playerController;
+
     private void Awake() 
     {
         _audioSource = GetComponent<AudioSource>();
+        _playerController = FindObjectOfType<PlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.CompareTag("Ground"))
         {
+            _playerController.DisableControls();
             _crashVFX.Play();
             _audioSource.PlayOneShot(_crashSFX);
             Invoke("ReloadLevel", _reloadDelay);

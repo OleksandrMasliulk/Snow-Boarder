@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _boostSpeed;
     [SerializeField] private float _torqueAmount;
 
+    private bool _canMove = true;
+
     private void Awake() 
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -25,8 +27,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Rotate();
-        Boost();
+        if (_canMove)
+        {
+            Rotate();
+            Boost();
+        }
+
         ClampVelocity();
     }
 
@@ -57,5 +63,10 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody2D.AddTorque(-_torqueAmount);
         }
+    }
+
+    public void DisableControls() 
+    {
+        _canMove = false;
     }
 }
